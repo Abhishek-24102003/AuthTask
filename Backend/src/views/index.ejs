@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Verification</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f7f6;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+
+        /* The Loader */
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Hidden State */
+        .hidden {
+            display: none;
+        }
+
+        /* Success Message & Button */
+        h2 { color: #2ecc71; margin-bottom: 20px; }
+        
+        .login-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="loader-section">
+            <div class="loader"></div>
+            <p>Verifying account...</p>
+        </div>
+
+        <div id="success-section" class="hidden">
+            <h2>Account Verified!</h2>
+            <button 
+            
+            class="login-btn" onclick="window.location.href='http://localhost:5173'">Click to Login</button>
+        </div>
+    </div>
+
+    <script>
+        // Logic to switch sections after 3 seconds
+        setTimeout(() => {
+            document.getElementById('loader-section').classList.add('hidden');
+            document.getElementById('success-section').classList.remove('hidden');
+        }, 3000); // 3000ms = 3 seconds
+    </script>
+
+</body>
+</html>
