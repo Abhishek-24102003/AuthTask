@@ -1,4 +1,3 @@
-import { UserModel } from "../models/user.model.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import CustomError from "../utils/customError.js";
 
