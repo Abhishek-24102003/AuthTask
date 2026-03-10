@@ -2,11 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchUser } from "../Apis/fetchUser";
 
 const HomePage = () => {
-  let LSD = JSON.parse(localStorage.getItem("user"));
-  const { _id } = LSD;
   const { data, isPending } = useQuery({
-    queryKey: ["user",_id],
-    queryFn:()=> fetchUser(_id),
+    queryKey: ["user"],
+    queryFn: fetchUser,
     staleTime:Infinity
   })
   
