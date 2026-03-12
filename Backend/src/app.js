@@ -10,7 +10,7 @@ import cors from "cors"
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// This ensures Express always finds the views folder regardless of where you launch the app
+
 app.set('views', path.join(__dirname, 'views'));
 app.use(cors({
     origin:"http://localhost:5173",
